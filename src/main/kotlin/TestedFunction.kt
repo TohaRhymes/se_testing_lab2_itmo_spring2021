@@ -1,6 +1,6 @@
 import kotlin.math.pow
 
-public fun tested_fun(x: Double, eps: Double, fun_map: Map<String, (Double, Double) -> Double>): Double {
+fun tested_fun(x: Double, eps: Double, fun_map: Map<String, (Double, Double) -> Double>): Double {
     val sin = fun_map["sin"]!!
     val cos = fun_map["cos"]!!
     val csc = fun_map["csc"]!!

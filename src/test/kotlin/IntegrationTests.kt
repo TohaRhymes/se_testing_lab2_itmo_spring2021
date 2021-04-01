@@ -133,6 +133,7 @@ class IntegrationTest {
         val ref_list = arrayListOf<String>()
         val cur_list = arrayListOf("sin", "ln")
         assertEquals(xPhaseTesting(x, eps, ref_list), xPhaseTesting(x, eps, cur_list), eps)
+
         var rows: ArrayList<ArrayList<Double>> = ArrayList()
         rows = rows.appendRow(arrayListOf(x, xPhaseTesting(x, eps, cur_list)))
         applyToCSV(rows)
@@ -333,7 +334,6 @@ class IntegrationTest {
         rows = rows.appendRow(arrayListOf(x, xPhaseTesting(x, eps, cur_list)))
         applyToCSV(rows)
     }
-
 
 
 }
