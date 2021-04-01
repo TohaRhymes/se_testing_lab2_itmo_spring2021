@@ -8,10 +8,13 @@ class GeniusWolframImplementation {
         override fun sin(x: Double, eps: Double): Double {
             var cur = 0.0
             var prev = Double.MAX_VALUE
-            var n = 1
+            var n = 0
             while (abs(cur - prev) > eps / 1000) {
                 prev = cur
-                cur += (-1.0).pow(n - 1) * (x).pow(2 * n - 1) / factorial(2 * n - 1)
+                var additional = (-1.0).pow(n) * (x).pow(2 * n + 1)
+                for (i in 1..2 * n + 1)
+                    additional /= i
+                cur +=  additional
                 n++
             }
             return cur
@@ -49,7 +52,6 @@ class GeniusWolframImplementation {
         override fun log_5(x: Double, eps: Double): Double = ln(x, eps) / ln(5.0, eps)
         override fun log_10(x: Double, eps: Double): Double = ln(x, eps) / ln(10.0, eps)
 
-        private fun factorial(f: Int): Int = if (f <= 1) 1 else f * factorial(f - 1)
 
     }
 
